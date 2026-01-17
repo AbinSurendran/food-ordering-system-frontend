@@ -5,6 +5,7 @@ function App() {
   return (
     <>
      <h1>FOOD ORDERING SYSTEM</h1>
+     <h2>Home page</h2>
     </>
   )
 }
