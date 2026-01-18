@@ -1,12 +1,31 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import './pages/user/Home' 
+import Header from './components/common/Header'  
+import Home from './pages/user/Home'
+import Menu from './pages/user/Menu'
+import Order from './pages/user/Order'
+import About from './pages/user/About'
+import Contact from './pages/user/Contact'
+import Cart from './pages/user/Cart'
+
 
 function App() {
 
   return (
     <>
-     <h1>FOOD ORDERING SYSTEM</h1>
-     <h2>Home page</h2>
-     <h3>Menu page</h3>
+    
+    <Header/>
+     <Routes>
+      
+        <Route path='/' element={<Home/>} />
+        <Route path='/menu' element={<Menu/>} />
+        <Route path='/order' element={<Order/>} />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/contact' element={<Contact/>} />
+        
+     </Routes>
     </>
   )
 }
