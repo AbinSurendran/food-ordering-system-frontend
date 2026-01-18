@@ -8,6 +8,7 @@ import Order from './pages/user/Order'
 import About from './pages/user/About'
 import Contact from './pages/user/Contact'
 import Cart from './pages/user/Cart'
+import Footer from './components/common/Footer'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         
      </Routes>
+     <Footer />
     </>
   )
 }
