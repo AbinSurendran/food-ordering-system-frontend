@@ -63,33 +63,7 @@ const dishes = [
 function Home() {
   return (
     <div className="bg-[#fffaf3]">
-      {/* ================= NAVBAR ================= */}
-      {/* <nav className="bg-[#fff7ed] sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center text-white">🍕</div>
-            <h1 className="text-xl font-bold text-orange-600">TastyBites</h1>
-          </div>
 
-          <ul className="hidden md:flex gap-8 font-medium">
-            <li className="text-orange-600 border-b-2 border-orange-500">Home</li>
-            <li className="hover:text-orange-600 cursor-pointer">Menu</li>
-            <li className="hover:text-orange-600 cursor-pointer">About</li>
-            <li className="hover:text-orange-600 cursor-pointer">Contact</li>
-          </ul>
-
-          <div className="flex gap-4 text-gray-700">
-            <FaSearch />
-            <FaUser />
-            <div className="relative">
-              <FaShoppingCart />
-              <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-                2
-              </span>
-            </div>
-          </div>
-        </div>
-      </nav> */}
 
       {/* ================= HERO ================= */}
       <section className="bg-[#fff7ed]">
@@ -213,22 +187,7 @@ function Home() {
       </section>
 
       {/* ================= FEATURES ================= */}
-      {/* <section className="py-16 bg-[#fff7ed]">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 text-center">
-          {[
-            ["🚀", "Fast Delivery", "Under 30 minutes"],
-            ["📍", "Real-time Tracking", "Kitchen to doorstep"],
-            ["🛡️", "Safe & Hygienic", "Sealed packaging"],
-            ["💳", "Easy Payment", "Multiple options"],
-          ].map((f) => (
-            <div key={f[1]}>
-              <div className="text-4xl">{f[0]}</div>
-              <h3 className="mt-4 font-semibold text-lg">{f[1]}</h3>
-              <p className="text-gray-500 text-sm mt-1">{f[2]}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
+
 
       <section className="py-16 bg-[#fff7ed]">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 text-center">
@@ -267,25 +226,7 @@ function Home() {
       </section>
 
       {/* ================= APP DOWNLOAD ================= */}
-      {/* <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-400 rounded-3xl p-14 text-center text-white shadow-xl">
-            <h2 className="text-3xl font-bold">Download Our App</h2>
-            <p className="mt-3">
-              Get exclusive offers and track your orders in real-time.
-            </p>
 
-            <div className="flex justify-center gap-4 mt-6">
-              <button className="bg-black px-6 py-3 rounded-xl">
-                🍎 App Store
-              </button>
-              <button className="bg-white text-black px-6 py-3 rounded-xl">
-                🤖 Play Store
-              </button>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
