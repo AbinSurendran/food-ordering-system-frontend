@@ -133,12 +133,14 @@ function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3"
-              alt="food"
-              className="w-[380px] h-[380px] object-cover rounded-full shadow-xl"
-            />
+          <div className="flex justify-center ">
+            <div className="relative bg-white rounded-full w-[400px] h-[400px] flex items-center justify-center shadow-2xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3"
+                alt="food"
+                className="w-[380px] h-[380px] object-cover rounded-full shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>

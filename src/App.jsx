@@ -9,6 +9,7 @@ import About from './pages/user/About'
 import Contact from './pages/user/Contact'
 import Cart from './pages/user/Cart'
 import Footer from './components/common/Footer'
+import Auth from './components/pages/Auth'
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
     
     <Header/>
      <Routes>
+
+      
       
         <Route path='/' element={<Home/>} />
         <Route path='/menu' element={<Menu/>} />
@@ -25,6 +28,11 @@ function App() {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
+
+        {/* common */}
+        <Route path='/login' element={<Auth/>} />
+        <Route path='/signup' element={<Auth Register/>} />
+        
         
      </Routes>
      <Footer />
