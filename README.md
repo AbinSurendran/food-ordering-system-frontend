@@ -19,9 +19,16 @@ If you are developing a production application, we recommend using TypeScript wi
 
 >>> npm install react-icons
 
+<<<<<<< HEAD
 >>> npm i lucide-react
 
 >>> npm install framer-motion lucide-react react-router-dom
 
 
 >>> 
+=======
+
+
+md:flex justify-center items-center  gap-10 text-xl font-bold  hidden
+
+>>>>>>> 20350cb79b00acc70af540ada16da5e132333d7c
