@@ -12,16 +12,16 @@ function Header() {
   const [toggleStatus, settoggleStatus] = useState(false)
   return (
     <>
-      <div className='grid grid-cols-3 p-2  shadow-md bg-white-900'>
+      <div className='grid grid-cols-3 p-2  shadow-md bg-white-900 '>
         <div className='flex  items-center p-3 gap-3'>
-          <div style={{ borderRadius: "50%", width: "80px", height: "80px", }} className='flex flex -column justify-center items-center  bg-orange-500 .gradient-hero  text-5xl'>🍕</div>
+          <div style={{ borderRadius: "50%", width: "70px", height: "70px", }} className='flex flex -col justify-center items-center  bg-orange-500  text-4xl'>🍕</div>
           <div className='text-3xl font-bold '>
             <span className=''>Tasty</span>
             <span className='text-orange-500 gradient-text'>Bites</span>
           </div >
         </div>
         <div className='flex justify-center items-center text-gray-600 '>
-          <ul className='md:flex  gap-10 text-xl font-bold hidden'>
+          <ul className='md:flex justify-center items-center  gap-10 text-xl font-bold  hidden'>
             <Link to={'/'}><li className='hover:text-orange-500 cursor-pointer'>Home</li></Link>
             <Link to={"/menu"}><li className='hover:text-orange-500 cursor-pointer '>Menu</li></Link>
             <Link to={'/about'}><li className='hover:text-orange-500 cursor-pointer '>About</li></Link>
@@ -33,7 +33,7 @@ function Header() {
             <CiSearch style={{ width: "30px", height: "30px" }} />
           </div>
           <div className='md:flex justify-center items-center rounded-xl text-gray-500 p-2 gap-2 hover:bg-orange-500 hover:text-white font-blod cursor-pointer hidden '>
-            <IoIosContact style={{ width: "30px", height: "30px" }} />
+            <Link to={'/signup'}><IoIosContact style={{ width: "30px", height: "30px" }} /></Link>
           </div>
           <div className='flex justify-center items-center rounded-xl  p-2 gap-2 hover:bg-orange-500 hover:text-white font-blod cursor-pointer  '>
             <PiShoppingCartThin style={{ width: "30px", height: "30px" }} />

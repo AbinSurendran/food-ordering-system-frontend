@@ -19,3 +19,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 >>> npm install react-icons
 
+
+
+md:flex justify-center items-center  gap-10 text-xl font-bold  hidden
+
