@@ -19,3 +19,9 @@ If you are developing a production application, we recommend using TypeScript wi
 
 >>> npm install react-icons
 
+>>> npm i lucide-react
+
+>>> npm install framer-motion lucide-react react-router-dom
+
+
+>>> 
