@@ -10,6 +10,12 @@ import Contact from './pages/user/Contact'
 import Cart from './pages/user/Cart'
 import Footer from './components/common/Footer'
 import Auth from './components/pages/Auth'
+import AdminSlidebar from './Admin/component/AdminSlidebar'
+import AdminDashboard from './Admin/pages/AdminDashboard'
+import AdminUsers from './Admin/pages/AdminUsers'
+import AdminOrders from './Admin/pages/AdminOrders'
+import AddFooditems from './Admin/pages/AddFooditems'
+import AdminOrderHistory from './Admin/pages/AdminOrderHistory'
 
 
 function App() {
@@ -21,7 +27,7 @@ function App() {
      <Routes>
 
       
-      
+      {/* user */}
         <Route path='/' element={<Home/>} />
         <Route path='/menu' element={<Menu/>} />
         <Route path='/order' element={<Order/>} />
@@ -32,6 +38,15 @@ function App() {
         {/* common */}
         <Route path='/login' element={<Auth/>} />
         <Route path='/signup' element={<Auth Register/>} />
+
+        {/* admin */}
+
+        <Route path='/adminsidebar'  element={<AdminSlidebar/>}/>
+        <Route path='/admindashboard'  element={<AdminDashboard/>}/>
+        <Route path='/adminusers'  element={<AdminUsers/>}/>
+        <Route path='/adminorders'  element={<AdminOrders/>}/>
+        <Route path='/adminfooditems'  element={<AddFooditems/>}/>
+        <Route path='/orderhistory'  element={<AdminOrderHistory/>}/>
         
         
      </Routes>

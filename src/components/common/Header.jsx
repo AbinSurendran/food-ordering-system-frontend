@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
-import { IoIosContact } from "react-icons/io";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from "react-icons/ai";
+import { FiUser } from "react-icons/fi";
 
 
 
@@ -33,7 +33,7 @@ function Header() {
             <CiSearch style={{ width: "30px", height: "30px" }} />
           </div>
           <div className='md:flex justify-center items-center rounded-xl text-gray-500 p-2 gap-2 hover:bg-orange-500 hover:text-white font-blod cursor-pointer hidden '>
-            <Link to={'/signup'}><IoIosContact style={{ width: "30px", height: "30px" }} /></Link>
+            <Link to={'/signup'}><FiUser style={{ width: "30px", height: "30px" }} /></Link>
           </div>
           <div className='flex justify-center items-center rounded-xl  p-2 gap-2 hover:bg-orange-500 hover:text-white font-blod cursor-pointer  '>
             <PiShoppingCartThin style={{ width: "30px", height: "30px" }} />
