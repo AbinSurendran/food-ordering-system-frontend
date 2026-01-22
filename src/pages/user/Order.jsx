@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../../components/common/Header'
+import Footer from '../../components/common/Footer'
 
 function Order() {
   return (
-    <div><h1 className='text-red-700'>Order</h1></div>
+    <>
+    <Header/>
+    <h1 className='text-red-700'>Order</h1>
+    <Footer/>
+    </>
   )
 }
 

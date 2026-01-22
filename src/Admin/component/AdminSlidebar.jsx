@@ -10,14 +10,14 @@ import { IoIosLogOut } from "react-icons/io";
 function AdminSlidebar() {
     return (
         <>
-            <div className='h-full  md:flex flex-col shadow-2xl '>
-                <div className='flex h-16 justify-center items-center border-b border-border'>
-                    <span className='text-3xl font-bold'>Tasty</span>
-                    <span className='text-3xl font-bold text-orange-500 gradient-text'>Bites</span>
-                    " admin"
+            <div className='h-full shadow-2xl relative z-20 shadow-gray-500  md:flex flex-col hidden '>
+                <div className='flex h-20 justify-center items-center border-b border-border'>
+                    <span className='text-2xl font-bold'>Tasty</span>
+                    <span className='text-2xl font-bold text-orange-500 gradient-text'>Bites</span>
+                    <span className='text-xl font-bold ms-3' >Admin</span>
                 </div >
                 <div className='border-b border-border p-4'>
-                    <div className='flex items-center gap-3'>
+                    <div className='flex items-center gap-3 '>
                         <div className='flex h-15 items-center justify-center rounded-full bg-orange-500 w-15 text-3xl text-white-foreground '>
                             A
                         </div>
@@ -39,7 +39,7 @@ function AdminSlidebar() {
                     <Link to={'/orderhistory'}><button className='flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-lg font-meduim hover:bg-orange-600 hover:text-white '><MdOutlineHistory className='text-2xl' />Orders History</button></Link>
 
                 </div>
-                <div className='border-t border-border p-4 '>
+                <div className='mt-10 border-t border-border p-4 '>
                     <Link to={''}><button className='flex justify-center w-full items-center gap-3 rounded-xl px-4 py-3 border border-orange-600 text-left text-lg font-meduim hover:bg-orange-600 hover:text-white '><IoIosLogOut className='text-2xl' />Log Out</button></Link>
                 </div>
             </div>

@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     
-    <Header/>
+    
      <Routes>
 
       
@@ -50,7 +50,7 @@ function App() {
         
         
      </Routes>
-     <Footer />
+     
     </>
   )
 }

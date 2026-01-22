@@ -25,7 +25,7 @@ function Header() {
             <Link to={'/'}><li className='hover:text-orange-500 cursor-pointer'>Home</li></Link>
             <Link to={"/menu"}><li className='hover:text-orange-500 cursor-pointer '>Menu</li></Link>
             <Link to={'/about'}><li className='hover:text-orange-500 cursor-pointer '>About</li></Link>
-            <Link to={'contact'}><li className='hover:text-orange-500 cursor-pointer '>Contact</li></Link>
+            <Link to={'/contact'}><li className='hover:text-orange-500 cursor-pointer '>Contact</li></Link>
           </ul>
         </div>
         <div className='flex  justify-end items-center text-gray-600 gap-5 mx-5 '>
