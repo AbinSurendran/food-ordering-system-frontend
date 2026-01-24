@@ -10,7 +10,7 @@ import { IoIosLogOut } from "react-icons/io";
 function AdminSlidebar() {
     return (
         <>
-            <div className='h-full shadow-2xl relative z-20 shadow-gray-500  md:flex flex-col hidden '>
+            <div className='h-full shadow-md relative z-20 shadow-gray-500  md:flex flex-col hidden '>
                 <div className='flex h-20 justify-center items-center border-b border-border'>
                     <span className='text-2xl font-bold'>Tasty</span>
                     <span className='text-2xl font-bold text-orange-500 gradient-text'>Bites</span>
