@@ -40,7 +40,7 @@ function AdminSlidebar() {
 
                 </div>
                 <div className='mt-10 border-t border-border p-4 '>
-                    <Link to={''}><button className='flex justify-center w-full items-center gap-3 rounded-xl px-4 py-3 border border-orange-600 text-left text-lg font-meduim hover:bg-orange-600 hover:text-white '><IoIosLogOut className='text-2xl' />Log Out</button></Link>
+                    <Link to={''}><button className='flex justify-center w-full items-center gap-3 rounded-xl px-4 py-3 border border-orange-600 text-left text-lg font-meduim text-orange-500 hover:bg-orange-600 hover:text-white '><IoIosLogOut className='text-2xl' />Log Out</button></Link>
                 </div>
             </div>
         </>

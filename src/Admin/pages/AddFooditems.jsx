@@ -6,6 +6,10 @@ import { IoCloseSharp } from "react-icons/io5";
 
 function AddFooditems() {
   const [modalStatus, setmodalStatus] = useState(false)
+  const [change,setchange] =useState({
+    name1:""
+  })
+  console.log(change);
   return (
     <>
       <div className='grid grid-cols-5 min-h-screen'>
@@ -91,7 +95,13 @@ function AddFooditems() {
                   </div>
                   <div className='flex flex-col w-full'>
                     <label className='font-bold text-gray-600' htmlFor="">Categories</label>
-                    <input className='h-12 rounded-xl border border-gray-300' type="text" placeholder='' />
+                    <select onChange={(e)=>setchange({...change,name1:e.target.value})} className='h-12 rounded-xl border border-gray-300 text-gray-500 font-bold p-3' name="" id="">
+                      <option selected value="Selecte Category" disabled>Selecte Category</option>
+                      <option  value="1">1🍣</option>
+                      <option  value="2">2</option>
+                      <option  value="3">3</option>
+                      <option  value="4">4</option>
+                    </select>
                   </div>
                 </div>
                 <div className='flex flex-col justify-center  p-3'>
@@ -100,7 +110,7 @@ function AddFooditems() {
                 </div>
                 <div className='flex flex-col justify-center  p-3'>
                   <label className='font-bold text-gray-600' htmlFor="">Preparation Time</label>
-                  <input className='h-12 rounded-xl border border-gray-300' type="text" placeholder='    20-25' />
+                  <input className='h-12 rounded-xl border border-gray-300' type="text" placeholder='    20-25 m' />
                 </div>
                 <div className='flex flex-col justify-center  p-3'>
                   <label className='font-bold text-gray-600' htmlFor="">Description</label>
@@ -114,6 +124,9 @@ function AddFooditems() {
             </div>
           </div>
         </div>}
+
+        
+        
     </>
   )
 }

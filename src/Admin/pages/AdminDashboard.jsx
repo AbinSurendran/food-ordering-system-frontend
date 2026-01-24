@@ -22,7 +22,7 @@ function AdminDashboard() {
           <div className='md:flex justify-center items-center mt-15 gap-4 hidden '>
             
             
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-green-100 p-3 rounded-xl'>
                   <GiMoneyStack className='text-4xl text-green-500' />
               </div>
@@ -32,7 +32,7 @@ function AdminDashboard() {
               </div>
 
             </div>
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-orange-100 p-3 rounded-xl'>
                   <IoBag className='text-4xl text-orange-500' />
               </div>
@@ -42,7 +42,7 @@ function AdminDashboard() {
               </div>
 
             </div>
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-gray-100 p-3 rounded-xl'>
                   <GoHistory className='text-4xl ' />
               </div>
@@ -58,7 +58,7 @@ function AdminDashboard() {
           <div className='flex justify-center items-center mt-6 gap-4'>
             
             
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-green-100 p-3 rounded-xl'>
                   <TfiPackage className='text-4xl text-green-500' />
               </div>
@@ -68,7 +68,7 @@ function AdminDashboard() {
               </div>
 
             </div>
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-orange-100 p-3 rounded-xl'>
                   <IoFastFood className='text-4xl text-orange-500' />
               </div>
@@ -78,7 +78,7 @@ function AdminDashboard() {
               </div>
 
             </div>
-            <div style={{width:"350px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
+            <div style={{width:"400px",height:"100px"}} className=' shadow-2xl shadow-gray-200 rounded-xl bg-white p-6 flex gap-5'>
               <div className='flex justify-center items-center bg-gray-100 p-3 rounded-xl'>
                   <LuUsers className='text-4xl ' />
               </div>
@@ -119,42 +119,8 @@ function AdminDashboard() {
                     </div>
                   </div>
               </div>
-              <div className='w-full h-25 shadow-md rounded-xl border border-gray-200'>
-                  <div className='flex justify-between items-center p-5'>
-                    <div className='gap-1'>
-                      <h1 className='text-xl font-bold'>ORD001</h1>
-                      <h3 className='text-gray-500 font-bold'>John Doe</h3>
-                    </div>
-                    <div className='gap-1'>
-                      <p className='text-xl font-bold'><span>$</span>22.1</p>
-                      <p className='text-gray-500 font-bold'>pending</p>
-                    </div>
-                  </div>
-              </div>
-              <div className='w-full h-25 shadow-md rounded-xl border border-gray-200'>
-                  <div className='flex justify-between items-center p-5'>
-                    <div className='gap-1'>
-                      <h1 className='text-xl font-bold'>ORD001</h1>
-                      <h3 className='text-gray-500 font-bold'>John Doe</h3>
-                    </div>
-                    <div className='gap-1'>
-                      <p className='text-xl font-bold'><span>$</span>22.1</p>
-                      <p className='text-gray-500 font-bold'>pending</p>
-                    </div>
-                  </div>
-              </div>
-              <div className='w-full h-25 shadow-md rounded-xl border border-gray-200'>
-                  <div className='flex justify-between items-center p-5'>
-                    <div className='gap-1'>
-                      <h1 className='text-xl font-bold'>ORD001</h1>
-                      <h3 className='text-gray-500 font-bold'>John Doe</h3>
-                    </div>
-                    <div className='gap-1'>
-                      <p className='text-xl font-bold'><span>$</span>22.1</p>
-                      <p className='text-gray-500 font-bold'>pending</p>
-                    </div>
-                  </div>
-              </div>
+              
+           
 
             </div>
 
