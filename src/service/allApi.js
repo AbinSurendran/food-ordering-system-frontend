@@ -34,3 +34,19 @@ export const AddFoodItemsAPI=async(reqBody)=>{
 export const getallFoodItemsAPI=async()=>{
     return await commonAPI("GET",`${serverURL}/foods`)
 }
+
+
+
+
+////////////////////////////////////////  Popular Dishes  ////////////////////////////////
+
+
+//1.add popular dishes to server API
+export const AddPopularDishesAPI=async(reqBody)=>{
+    return await commonAPI("POST",`${serverURL}/popularDishes`,reqBody)
+}
+
+//2.get all categories from the server
+export const getallPopDishesAPI=async()=>{
+    return await commonAPI("GET",`${serverURL}/popularDishes`)
+}

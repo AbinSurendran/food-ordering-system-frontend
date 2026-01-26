@@ -3,7 +3,7 @@ import AdminSlidebar from '../component/AdminSlidebar'
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
-import { AddFoodItemsAPI, CategoriesAPI, getallCategoriesAPI, getallFoodItemsAPI } from '../../service/allApi';
+import { AddFoodItemsAPI, AddPopularDishesAPI, CategoriesAPI, getallCategoriesAPI, getallFoodItemsAPI, getallPopDishesAPI } from '../../service/allApi';
 
 function AddFooditems() {
   //modal1 for add food items
@@ -27,19 +27,33 @@ function AddFooditems() {
     description:"",
     preparationTime:""
   })
+  //state for store popular dishes
+  const [PopDishes,setPopDishees]=useState({
+    DName:"",
+    Dimage:"",
+    DpreparationTime:"",
+    Ddescription:"",
+    Dprice:"",
+    Dcategory:""
+  })
   //state for store categories
   const [gettAllcategories, setgetAllcategories] = useState([])
+  //state for store Food items
   const [gettAllFooditem, setgetAllFooditme] = useState([])
+  //state for store Food items
+  const [gettAllPopDishes, setgetAllPopdishes] = useState([])
   console.log(gettAllcategories);
   console.log(gettAllFooditem);
   console.log(addFoods);
   console.log(Search);
-  
+  console.log(PopDishes);
+  console.log(gettAllPopDishes);
   console.log(categories);
   //useEffect for get categories
   useEffect(()=>{
     getallcate()
     getallFoods()
+    PopDishe()
   },[])
 
   //add categories function
@@ -82,6 +96,26 @@ function AddFooditems() {
     }
   }
 
+   //add Popular Dishes function
+  const AddPopDishes = async () => {
+    try {
+      const result = await AddPopularDishesAPI(PopDishes)
+      if (result.status > 199 || result.status < 300) {
+        console.log(result);
+        alert("Add Popular Dishes Details Add Success")
+
+      }
+      else {
+        alert("Something Went worng is Add Popular Dishes details")
+      }
+
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+
   //get all categories function
 
   const getallcate = async () => {
@@ -106,7 +140,7 @@ function AddFooditems() {
 
   }
 
-   //get all categories function
+   //get all Food items function
 
   const getallFoods = async () => {
     try {
@@ -130,8 +164,30 @@ function AddFooditems() {
 
   }
 
-  //length for find number of items added
-  const total =gettAllFooditem.length
+   //get all Food items function
+
+  const PopDishe = async () => {
+    try {
+
+      const result = await getallPopDishesAPI()
+
+      if (result.status > 199 || result.status < 300) {
+        console.log(result);
+        setgetAllPopdishes(result.data)
+
+      }
+      else {
+        alert("Something Went worng")
+      }
+
+    } catch (error) {
+      console.log(error);
+
+
+    }
+
+  }
+  
 
   
 
@@ -195,22 +251,22 @@ function AddFooditems() {
                       <tr className='border-b border-gray-400 hover:bg-gray-100'>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Categories</th>
+                        <th>Category</th>
                         <th>Price</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className='border-b border-gray-400 hover:bg-gray-100'>
-                        <td className='h-10 text-center align-center'>img</td>
-                        <td className='h-10 text-center align-middle'>img</td>
-                        <td className='h-10 text-center align-middle'>img</td>
-                        <td className='h-10 text-center align-middle'>img</td>
-                        <td className='h-10 text-center align-middle '>
+                      {gettAllPopDishes&&gettAllPopDishes.map((dishe)=>(<tr className='border-b border-gray-400 hover:bg-gray-100'>
+                        <td className='h-10 text-center align-center p-2'><img style={{width:"50px",height:"50px"}} className='rounded-2xl' src={dishe.Dimage} alt="" /></td>
+                        <td className='h-10 text-center text-sm align-middle p-2'>{dishe.DName}</td>
+                        <td className='h-10 text-center text-sm align-middle p-2'></td>
+                        <td className='h-10 text-center text-sm align-middle p-2'>{dishe.Dprice}</td>
+                        <td className='h-10 text-center align-middle p-2 '>
                           <button className='p-2 rounded-xl text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white ms-1 me-3'><MdOutlineModeEdit className='text-1xl' /></button>
                           <button className='p-2 rounded-xl bg-red-500 text-white'><RiDeleteBinLine className='text-1xl' /></button>
                         </td>
-                      </tr>
+                      </tr>))}
                     </tbody>
                   </table>
                 </div>
@@ -223,7 +279,7 @@ function AddFooditems() {
           </div>
 
           <div className='bg-white mt-10 p-5 rounded-xl shadow-md shadow-gray-200'>
-            <h1 className='text-2xl font-bold'>All Food Items <span>({total})</span></h1>
+            <h1 className='text-2xl font-bold'>All Food Items <span>({gettAllFooditem.length})</span></h1>
 
             <div className='flex justify-center items-center w-full mt-10 '>
               <table className='w-full '>
@@ -304,7 +360,7 @@ function AddFooditems() {
                 </div>
                 <div className='flex flex-col justify-center  p-3'>
                   <label className='font-bold text-gray-600' htmlFor="">Description</label>
-                  <textarea onChange={(e) => setaddFoods({ ...addFoods, description: e.target.value })} className='rounded-xl border border-gray-300 p-5' name="" id="" cols="10" rows="10" placeholder='Describe dish ... '></textarea>
+                  <textarea onChange={(e) => setaddFoods({ ...addFoods, description: e.target.value })} className='rounded-xl border border-gray-300 p-5' name="" id="" cols="3" rows="3" placeholder='Describe dish ... '></textarea>
                 </div>
                 <div className='flex justify-end p-3 gap-2'>
                   <button onClick={() => setmodalStatus(!modalStatus)} className='border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white p-3 text-lg rounded-2xl'>Cancel</button>
@@ -324,7 +380,7 @@ function AddFooditems() {
             <div className='flex justify-center items-center min-h-screen py-8'>
               <div className='bg-white rounded-2xl md:w-160 w-100 p-5  '>
                 <div className='bg-white text-black font-bold text-2xl rounded-xl flex justify-between items-center p-5 '>
-                  <h3>Add Categories List && Popular Dishes</h3>
+                  <h3>Add New Categories List && Popular Dishes</h3>
                   <IoCloseSharp onClick={() => setmodal2Status(!modal2Status)} className='text-2xl cursor-pointer' />
 
                 </div>
@@ -356,32 +412,50 @@ function AddFooditems() {
                     <div className='flex  justify-center  p-3 gap-3 '>
                       <div className='flex flex-col w-full'>
                         <label className='font-bold text-gray-600' htmlFor="cid">Name</label>
-                        <input id='cid' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : Name' />
+                        <input onChange={(e) => setPopDishees({ ...PopDishes, DName: e.target.value })} id='cid' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : Name' />
                       </div>
                       <div className='flex flex-col w-full'>
                         <label className='font-bold text-gray-600' htmlFor="ci">Price($)</label>
-                        <input id='ci' className='h-12 rounded-xl border border-gray-300 p-3 ' type="text" placeholder='    e.g : $ 12.1' />
+                        <input onChange={(e) => setPopDishees({ ...PopDishes, Dprice: e.target.value })} id='ci' className='h-12 rounded-xl border border-gray-300 p-3 ' type="text" placeholder='    e.g : $ 12.1' />
                       </div>
                     </div>
                     <div className='flex  justify-center  p-3  '>
                       <div className='flex flex-col w-full'>
                         <label className='font-bold text-gray-600' htmlFor="cn">Image URL</label>
-                        <input id='cn' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : http//...' />
+                        <input onChange={(e) => setPopDishees({ ...PopDishes, Dimage: e.target.value })} id='cn' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : http//...' />
                       </div>
                     </div>
+                    <div className='flex  justify-between  p-3  gap-2'>
+                  <div className='flex flex-col w-full'>
+                   <label className='font-bold text-gray-600' htmlFor="cn">Preparation Time</label>
+                        <input onChange={(e) => setPopDishees({ ...PopDishes, DpreparationTime: e.target.value })} id='cn' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : 20-25 min' />
+                  </div>
+                  <div className='flex flex-col w-full'>
+                    <label className='font-bold text-gray-600' htmlFor="">Categories</label>
+                    <select onChange={(e) => setPopDishees({ ...PopDishes, Dcategory: e.target.value })} className='h-12 rounded-xl border border-gray-300 text-gray-500 font-bold p-3' name="" id=""> 
+                        <option  selected >Selecte Category</option>
+                       {gettAllcategories&& gettAllcategories.map((categoray)=>(<>
+                        <option key={categoray.id} value={categoray.id}>{categoray.icon} {categoray.Name}</option>
+                        </>)) }
+                    </select>
+                  </div>
+                </div>
                     <div className='flex  justify-center  p-3  '>
                       <div className='flex flex-col w-full'>
-                        <label className='font-bold text-gray-600' htmlFor="cn">Preparation Time</label>
-                        <input id='cn' className='h-12 rounded-xl border border-gray-300 p-3' type="text" placeholder='    e.g : 20-25 min' />
+                        
                       </div>
                     </div>
+                    <div className='flex flex-col justify-center  p-3'>
+                  <label className='font-bold text-gray-600' htmlFor="">Description</label>
+                  <textarea onChange={(e) => setPopDishees({ ...PopDishes, Ddescription: e.target.value })} className='rounded-xl border border-gray-300 p-5' name="" id="" cols="3" rows="3" placeholder='Describe dish ... '></textarea>
+                </div>
 
                   </div>
 
                 </div>
                 <div className='flex justify-end p-3 gap-2'>
                   <button onClick={() => setmodal2Status(!modal2Status)} className='border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white p-3 text-lg rounded-2xl'>Cancel</button>
-                  <button  className='bg-orange-600 text-white p-3 text-lg rounded-2xl'>Add Dishes</button>
+                  <button onClick={AddPopDishes}  className='bg-orange-600 text-white p-3 text-lg rounded-2xl'>Add Dishes</button>
                   <button onClick={Addcategary} className='bg-orange-600 text-white p-3 text-lg rounded-2xl'>Add Cate</button>
                 </div>
               </div>
